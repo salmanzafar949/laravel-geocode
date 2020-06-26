@@ -11,4 +11,9 @@ class GeoCode
     {
         $this->API_KEY = config('geocode.API_KEY');
     }
+
+    public function getLatAndLong($address)
+    {
+        return GeoCodeService::findPoints($address, $this->API_KEY);
+    }
 }
