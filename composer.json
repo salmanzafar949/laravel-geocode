@@ -1,0 +1,32 @@
+{
+    "name": "salmanzafar/laravel-geocode",
+    "description": "A Laravel package that makes it to find lat and long from a specific address",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Salman Zafar",
+            "email": "salmanzafar949@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "laravel/framework": ">=5.5"
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Salman\\GeoCoderServiceProvider\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Salman\\GeoCode\\GeoCodeServiceProvider"
+            ]
+        }
+    }
+}
