@@ -4,28 +4,48 @@
 namespace Salman\GeoCode\Services;
 
 
+use GuzzleHttp\Client;
+
 class GeoCodeService
 {
-    private const URL = "https://maps.googleapis.com/maps/api/geocode/json?";
+    private const URL = "https://maps.googleapis.com/maps/api/";
+    private const endPoint = "geocode/json?";
 
     public static function findPoints($address, $key)
     {
-        $url = self::URL."address=$address"."&Key=$key";
+        $finalAddress = str_replace(' ', '+', $address);
 
-        return self::makeRequest($url);
+        $urlWithData = self::URL.self::endPoint."address=$finalAddress"."&key=$key";
+        $data = [
+            "address" => $address,
+            "key" => $key
+        ];
+
+        return self::makeRequest($urlWithData);
 
     }
 
 
     protected static function makeRequest($urlWithData)
     {
+//        return $urlWithData;
 
-        $request = new GuzzleHttp\Client();
+        $cURLConnection = curl_init();
 
-        $request->request('GET', $urlWithData);
+        curl_setopt($cURLConnection, CURLOPT_URL, $urlWithData);
+        curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
-        $response = $request->getBody();
+        $data = curl_exec($cURLConnection);
 
-        return collect($response);
+        curl_close($cURLConnection);
+
+        $finalData = json_decode($data, true);
+
+        if ($finalData['status'] === "OK")
+        {
+            return collect($finalData['results'][0]);
+        }
+
+        return $finalData['error_message'];
     }
 }

@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "6.5.*"
     },
     "require-dev": {
+        "ext-curl": "*"
     },
     "prefer-stable": true,
     "autoload": {
