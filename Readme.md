@@ -10,8 +10,8 @@ Laravel Package to get Lat and Long from Specific Address.
 
 ## Table of contents
 * [Installation](#installation)
-* [Configuration](#configuration-optional)
-
+* [Configuration](#configuration)
+* [Usage](#usage)
 
 # Installation
 
@@ -19,12 +19,15 @@ Laravel Package to get Lat and Long from Specific Address.
 composer require salmanzafar/laravel-geocode
 ```
 
-## Configuration (optional)
-Publishing service provider
+## Configuration
+Publish the configuration file
 
 ```bash
-php artisan vendor:publish --provider="Salman\GeoCode\GeoCodeServiceProvider::class"
+php artisan vendor:publish --provider="Salman\GeoCode\GeoCodeServiceProvider"
 ```
-
+## Config/geocode.php
+```
+'API_KEY' => env('GOOGLE_GEOCODE_API_KEY', ''),
+```
 ## Enable the package (Optional)
-This package implements Laravel auto-discovery feature. After you install it the package provider and facade are added automatically for laravel >= 5.5.
+This package implements Laravel auto-discovery feature
