@@ -25,10 +25,17 @@ class GeoCodeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishConfig();
+    }
+
+    /*
+     * Publish Config File
+     */
+    private function publishConfig()
+    {
         $this->mergeConfigFrom(__DIR__.'/config/geocode.php','geocode');
         $this->publishes([
             __DIR__.'/config/geocode.php' => config_path('geocode.php'),
         ]);
     }
-
 }
