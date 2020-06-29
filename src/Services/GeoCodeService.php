@@ -16,10 +16,10 @@ class GeoCodeService
         $finalAddress = str_replace(' ', '+', $address);
 
         $urlWithData = self::URL.self::endPoint."address=$finalAddress"."&key=$key";
-        $data = [
+        /*$data = [
             "address" => $address,
             "key" => $key
-        ];
+        ];*/
 
         return self::makeRequest($urlWithData);
 

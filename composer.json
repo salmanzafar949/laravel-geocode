@@ -46,7 +46,10 @@
         "laravel": {
             "providers": [
                 "Salman\\GeoCode\\GeoCodeServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "GeoCode": "Salman\\GeoCode\\Facades\\GeoCode"
+            }
         }
     }
 }

@@ -3,9 +3,9 @@
 use \Salman\GeoCode\Services\GeoCode;
 
 
-if (!function_exists('connectToPublish'))
+if (!function_exists('findAddressCoordinates'))
 {
-    function getCoordinates($address)
+    function findAddressCoordinates($address)
     {
         $geocode = new GeoCode();
 
