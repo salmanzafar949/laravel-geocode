@@ -61,9 +61,17 @@ public function lookForPoints()
 }
 ```
 
-#### Response
+#### Finding Coordinates using Helper Function
+```php
+public function lookForPoints()
+{
+    $address = "1600 Amphitheatre Parkway,Mountain View";
+    return findAddressCoordinates($address); 
+}
+```
 
-###### It will return a Laravel collection as response
+#### Response
+##### It will return a Laravel collection as response
 
 ```json
 {
