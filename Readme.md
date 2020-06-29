@@ -35,6 +35,9 @@ This package implements Laravel auto-discovery feature
 
 ## Usage
 
+You need a <a href =https://developers.google.com/maps/documentation/geocoding/intro>Google map geocode</a> api key in order to use this
+
+
 #### Finding Coordinates
 
 ```php
