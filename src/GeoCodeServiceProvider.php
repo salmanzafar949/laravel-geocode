@@ -9,15 +9,10 @@
 namespace Salman\GeoCode;
 
 use Illuminate\Support\ServiceProvider;
+use Salman\GeoCode\Services\GeoCode;
 
 class GeoCodeServiceProvider extends ServiceProvider
 {
-
-    public function register()
-    {
-
-    }
-
     /**
      * Bootstrap services.
      *
@@ -28,6 +23,21 @@ class GeoCodeServiceProvider extends ServiceProvider
         $this->publishConfig();
     }
 
+    public function register()
+    {
+        $this->app->singleton('GeoCode',function (){
+
+            return new GeoCode();
+        });
+    }
+
+    /**
+     * @return array
+     */
+    public function provides()
+    {
+        return array('GeoCode');
+    }
     /*
      * Publish Config File
      */

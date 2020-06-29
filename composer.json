@@ -1,6 +1,6 @@
 {
     "name": "salmanzafar/laravel-geocode",
-    "description": "A Laravel package that makes it to find lat and long from a specific address",
+    "description": "A Laravel Package to find Lat and Long of a given Specific Address",
     "type": "library",
     "license": "MIT",
     "authors": [
