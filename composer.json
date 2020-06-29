@@ -9,6 +9,22 @@
             "email": "salmanzafar949@gmail.com"
         }
     ],
+    "keywords": [
+        "laravel",
+        "laravel5",
+        "laravel6",
+        "laravel7",
+        "geocode-laravel",
+        "laravel-geocode",
+        "google maps laravel geocode",
+        "google maps laravel geocoder",
+        "php",
+        "php 7.0",
+        "php 7.1",
+        "php 7.2",
+        "php 7.3",
+        "php 7.4"
+    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0.0",
@@ -20,8 +36,11 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Salman\\GeoCoderServiceProvider\\": "src/"
-        }
+            "Salman\\GeoCode\\": "src/"
+        },
+        "files": [
+            "src/Helper/Helpers.php"
+        ]
     },
     "extra": {
         "laravel": {
