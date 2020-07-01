@@ -41,11 +41,16 @@ class GeoCodeService
 
         $finalData = json_decode($data, true);
 
-        if ($finalData['status'] === "OK")
+        if ($finalData)
         {
-            return collect($finalData['results'][0]);
+            if ($finalData['status'] === "OK")
+            {
+                return collect($finalData['results'][0]);
+            }
+
+            return $finalData['error_message'];
         }
 
-        return $finalData['error_message'];
+        return false;
     }
 }
