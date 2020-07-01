@@ -47,6 +47,10 @@ class GeoCodeService
             {
                 return collect($finalData['results'][0]);
             }
+            elseif ($finalData['status'] == "ZERO_RESULTS")
+            {
+                return false;
+            }
 
             return $finalData['error_message'];
         }
